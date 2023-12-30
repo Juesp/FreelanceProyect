@@ -1,0 +1,107 @@
+{{#if Admin}}
+<div class="col-md-8 mx-auto mt-3">
+    <div class="card ">
+        <div class="card-header text-center">            
+            <h1 class="h4 text-white font-weight-bold">Datos de Empresa</h1>
+        </div>
+        <div class="card-body"> 
+                <h5 class="font-weight-bold text-center mt-0 mb-1">Información General</h5>
+                <hr class="mt-0 mb-0">                        
+                <div class="form-group row mb-0 mt-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Nombre empresa:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user1.company_name}}</a>    
+                    </div>                                         
+                </div>  
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">NIT:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user1.nit}}</a>    
+                    </div>                                         
+                </div> 
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Ciudad:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user1.company_city}}</a>    
+                    </div>     
+                </div>                
+                <div class="form-group row mb-0">
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Departamento:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user1.company_department}}</a>    
+                    </div>                                         
+                </div>
+                <div class="form-group row mb-0">
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Dirección:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user1.company_address}}</a>    
+                    </div>    
+                </div>
+                <div class="form-group row mb-0">
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Teléfono:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user1.company_phone}}</a>    
+                    </div>                                         
+                </div>
+
+                <h5 class="font-weight-bold text-center mt-0 mb-1">Información representante legal</h5>
+                <hr class="mt-0 mb-0 mt-0">
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Nombre completo:</label>                           
+                    </div>                
+                    <div>                                                                        
+                        <a class="bg-light">{{user1.legal_name}} {{user1.legal_lastname}} {{user1.legal_sec_lastname}}</a> 
+                    </div>                                         
+                </div> 
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Tipo de identificación:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user1.legal_type_identification}}</a>    
+                    </div>                                         
+                </div> 
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Número de identificación:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user1.legal_number_identification}}</a>    
+                    </div>                                         
+                </div> 
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Número de Teléfono:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user1.legal_mobile_number}}</a>    
+                    </div>                                         
+                </div> 
+
+                <div class="form-group row justify-content-center mb-0 mt-4">  
+                    <div class="col-md-4">
+                        <a href="/users/started"><button class="btn btn-primary btn-block">Ir a inicio</button></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="/users/editCompanyFormAdmin/{{user1._id}}"><button class="btn btn-primary btn-block">Editar</button></a>
+                    </div> 
+                </div>
+        </div>
+    </div>    
+</div>
+<br>
+{{/if}}
+

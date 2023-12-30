@@ -1,0 +1,159 @@
+<div class="col-md-8 mx-auto mt-3">
+    <div class="card ">
+        <div class="card-header text-center">            
+            <h1 class="h4 text-white font-weight-bold">Agendar hora del mantenimiento</h1>
+        </div>
+        <div class="card-body">  
+            <h5 class="font-weight-bold text-center mt-0 mb-1">Información de la empresa</h5>
+                <hr class="mt-0 mb-0">                        
+                <div class="form-group row mb-0 mt-2">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Nombre:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{company_name}}</a>    
+                    </div>                                         
+                </div>  
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Dirección:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{company_address}}</a>    
+                    </div>                                         
+                </div>           
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Ciudad:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{company_city}}</a>    
+                    </div>                                         
+                </div>           
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Teléfono:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{company_phone}}</a>    
+                    </div>                                         
+                </div> 
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Mantenimiento solicitado por:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{name}} {{lastname}} {{sec_lastname}}</a>    
+                    </div>                                         
+                </div>           
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Fecha de solicitud:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{currentDate}}</a>    
+                    </div>                                         
+                </div>           
+                <div class="form-group row mb-0"> 
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Descripción:</label>
+                    </div>     
+                </div>
+                
+                
+                    <form action="/request/createRequest" class= "justify-content-center" method="POST">  
+                        <div class="form-group row mb-0"> 
+                            <div class="col-md-12">
+                                <textarea type="text" class="form-control bg-light" name="description" rows="2"
+                            placeholder="Descripción del problema">{{description}}</textarea>
+                            </div>     
+                        </div>
+                      <div class="form-group row d-flex justify-content-center">                           
+                            <div class="col-md-6 mb-0">
+                              <label for="date_of_maintenance" class="mb-0">Fecha de mantenimiento:</label>
+                              <input type="text" readonly=»readonly» class="form-control bg-light mt-0" id="date_of_maintenance" name="date_of_maintenance" placeholder="Fecha de mantenimiento"
+                                  value="{{date3}}">
+                            </div>                                     
+                            <div class="col-md-6 mb-0"> 
+                              <label for="hour_of_maintenance" class="mb-0">Horarios disponibles:</label>
+                              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>                      
+                              <select class="custom-select mr-sm-2" id="horas" name="hour_of_maintenance">
+                                  <option selected>--- Seleccione una hora ---</option>
+                                  <option value="8:00am">8:00am</option> 
+                                  <option value="9:00am">9:00am</option>  
+                                  <option value="10:00am">10:00am</option>
+                                  <option value="11:00am">11:00am</option>
+                                  <option value="2:00pm">2:00pm</option> 
+                                  <option value="3:00pm">3:00pm</option>                        
+                                  <option value="4:00pm">4:00pm</option> 
+                                  <option value="5:00pm">5:00pm</option> 
+                              </select>
+                              <div class="d-none">                         
+                                    <select name="date_of_request" class="hidden" aria-hidden="true">
+                                        <option value="{{currentDate}}">{{currentDate}}</option>
+                                    </select>
+                                    <select name="company_rel" class="hidden" aria-hidden="true">
+                                        <option value="{{company_rel}}">{{company_rel}}</option>
+                                    </select>
+                                    <select name="company_request" class="hidden" aria-hidden="true">
+                                        <option value="{{company_name}}">{{company_name}}</option>
+                                    </select>
+                                    <select name="company_request_ad" class="hidden" aria-hidden="true">
+                                        <option value="{{company_address}}">{{company_address}}</option>
+                                    </select>
+                                    <select name="company_request_city" class="hidden" aria-hidden="true">
+                                        <option value="{{company_city}}">{{company_city}}</option>
+                                    </select>
+                                    <select name="company_request_pho" class="hidden" aria-hidden="true">
+                                        <option value="{{company_phone}}">{{company_phone}}</option>
+                                    </select>
+                                    <select name="request_by" class="hidden" aria-hidden="true">
+                                        <option value="{{name}} {{lastname}} {{sec_lastname}}">{{name}} {{lastname}} {{sec_lastname}}</option>
+                                    </select>
+                                    <select name="state" class="hidden" aria-hidden="true">
+                                        <option value="creado">creado</option>
+                                    </select>
+                                    
+                                </div>
+                              <script>
+                                //var fechas = [{{hours}}];
+                                
+                                $(function() {
+
+                                //var list = ["9:00am", "10:00am"];
+                                let valores = [$("#hora").val()];
+                                let list = [];
+                                valores.forEach(element => {//Para cada valor del array
+                                    element.split(',').forEach(elm => {//Lo divido en 2 por la coma y para cada uno de los resultados
+                                        list.push((elm));//LO meto en el array fin haciéndole un parse a float para evitar comillas
+                                    });
+                                });
+                                //var list = $('#hora').attr("id");
+                                //var list = document.getElementById('hora');
+                                console.log(list)
+                                $('select option').filter(function() { 
+                                    return !($.inArray(this.value, list) == -1);
+                                }).remove();
+                                
+                                });
+                              </script>
+                            </div>
+                            <div class="d-none">
+                              <input type="text" id="hora" value="{{hours}}">
+                            </div>
+                            
+                      </div>                                  
+                      <hr>
+                      {{!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary btn-block">Guardar</button>
+                      </div> --}}
+                      <div class="col-md-4 mx-auto">                  
+                        <button class="btn btn-primary btn-block">Guardar</button>
+                      </div>
+                    </form>            
+        </div>
+    </div>    
+</div>
+
+<br>

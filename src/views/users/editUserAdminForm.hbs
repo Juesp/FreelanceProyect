@@ -1,0 +1,102 @@
+{{#if Admin}}
+    <div class="col-md-8 mx-auto mt-3">
+        <div class="card ">
+            <div class="card-header text-center">            
+                <h1 class="h4 text-white font-weight-bold">Edición de Usuario</h1>
+            </div>
+            <div class="card-body">  
+
+                <form action="/users/editUserAdmin/{{user1.id}}?_method=PUT" class= "justify-content-center" method="POST">             
+                    <input type="hidden" name="_method" value="PUT">  
+                    
+                    <h6 class="font-weight-bold mt-0 mb-1">Información personal</h6>                              
+                    <div class="form-group row d-flex justify-content-center"> 
+                        <div class="col-md-6 mb-2">                        
+                            <label for="tipo ide" class="mb-0">Tipo de identificación:</label>                      
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="identification_type">
+                                <!-- Circulear externa 024 de 2019 Ministerio de protección social -->                            
+                                <option selected>{{user1.identification_type}}</option>                            
+                                <option value="Cedula">Cédula</option>
+                                <option value="Cedula_extrangeria">Cédula de extrangería</option>
+                                <option value="Pasaporte">Pasaporte</option>
+                                <option value="Tarjeta_identidad">Tarjeta de identidad</option>
+                                <option value="Registro_civil">Registro civil</option>
+                                <option value="Carnet_diplomatico">Carné diplomático</option>
+                                <option value="Perm_especial_permanencia">Permiso especial de permanencia</option>
+                            </select>
+                        </div> 
+                        <div class="col-md-6 mb-2">
+                            <label for="numero ide" class="mb-0">Número de identificación:</label>                      
+                            <input type="number" class="form-control bg-light" name="identification" placeholder="Número de identificación"
+                                value="{{user1.identification}}">
+                        </div>     
+                        <div class="col-md-4 mb-0">
+                            <label for="nombres" class="mb-0">Nombres:</label>                      
+                            <input type="text" class="form-control bg-light" name="name" placeholder="Nombres"
+                                value="{{user1.name}}">
+                        </div>
+                        <div class="col-md-4 mb-0">
+                            <label for="apellido" class="mb-0">Primer apellido:</label>                      
+                            <input type="text" class="form-control bg-light" name="lastname" placeholder="Primer apellido"
+                                value="{{user1.lastname}}">
+                        </div>
+                        <div class="col-md-4 mb-0">
+                            <label for="apellido dos" class="mb-0">Segundo apellido:</label>                      
+                            <input type="text" class="form-control bg-light" name="sec_lastname"
+                                placeholder="Segundo apellido" value="{{user1.sec_lastname}}">
+                        </div>                                       
+                    </div>                                  
+                    <hr>
+
+                    <h6 class="font-weight-bold mt-0 mb-1">Información general</h6>                              
+                    <div class="form-group row"> 
+                        <div class="col-md-4 mb-0">
+                            <label for="f_nac" class="mb-0">Fecha de nacimiento:</label>
+                            <input type="date" class="form-control bg-light mt-0" id="f_nac" name="date_of_bird" placeholder="Fecha de nacimiento"
+                                value="{{user1.date_of_bird}}">
+                        </div>
+                        <div class="col-md-4 mb-0">  
+                            <label for="genero" class="mb-0">Género:</label>                      
+                            <select class="custom-select mr-sm-2" id="gender" name="gender"> 
+                                <option selected>{{user1.gender}}</option>           
+                                <option value="Masculino">Masculino</option> 
+                                <option value="Femenino">Femenino</option>  
+                                <option value="Otro">Otro</option>                         
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-0"> 
+                            <label for="sangre" class="mb-0">Teléfono móvil:</label>                      
+                            <input type="number" class="form-control bg-light" name="mobile_phone"
+                                placeholder="Teléfono móvil" value="{{user1.mobile_phone}}">
+                        </div> 
+                    </div>
+                    <hr>
+
+                    <h6 class="font-weight-bold mt-0 mb-1">Información de sesión</h6>                              
+                    <div class="form-group row d-flex justify-content-center">                    
+                        <div class="col-md-6 mb-2">                        
+                            <label for="rol" class="mb-0">Rol:</label>                      
+                            <select class="custom-select mr-sm-2" id="role" name="role">
+                                <option selected>{{user1.role}}</option>
+                                <option value="Empleado">Empleado</option>
+                                <option value="Cliente">Cliente</option>
+                                <option value="Admin">Administrador de la plataforma</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label for="email" class="mb-0">Email:</label>                      
+                            <input type="email" class="form-control bg-light" name="email" placeholder="Email"
+                                value="{{user1.email}}">
+                        </div>                                    
+                    </div>
+                    
+                    <div class="col-md-4 mx-auto">                  
+                        <button class="btn btn-primary btn-block">Guardar</button>
+                    </div>
+                    
+                </form>            
+            </div>
+        </div>    
+    </div>
+<br>
+{{/if}}

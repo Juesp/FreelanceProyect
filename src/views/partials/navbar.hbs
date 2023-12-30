@@ -1,0 +1,23 @@
+<!-- Navbar  -->
+{{#if user}}
+<nav class="navbar navbar-expand-lg navbar-black">
+    <div class="container-fluid">
+
+        <div class="text-navbar mx-auto">
+            USUARIO: 
+            <strong class="text-navbar-name">{{name}} {{lastname}} {{sec_lastname}}</strong>
+            ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ROL: 
+            <strong class="text-navbar-name">{{rol}}</strong>
+        </div>
+        
+        
+        <a href="/users/logout">
+            <button type="button" class="btn btn-primary btn-forgot">
+                Cerrar sesión
+            </button> 
+        </a>
+        
+                                                       
+    </div>
+</nav>
+{{/if}}

@@ -1,0 +1,148 @@
+{{#if Admin}}
+<div class="col-md-8 mx-auto mt-0">
+    <br>
+    <div class="card">
+        <div class="card-header text-center">            
+            <h1 class="h3 text-white">Agregar un Nuevo Usuario</h1>
+        </div>
+        <div class="card-body"> 
+
+            <form action="/users/createUser" class= "justify-content-center" method="POST">  
+
+                <h6 class="font-weight-bold mt-0 mb-1">Información personal</h6>                              
+                <div class="form-group row d-flex justify-content-center"> 
+                    <div class="col-md-6 mb-2">                        
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="identification_type">
+                            <!-- Circulear externa 024 de 2019 Ministerio de protección social -->                            
+                            <option selected>Elija un tipo de identificación</option>                            
+                            <option value="Cedula">Cédula</option>
+                            <option value="Cedula_extrangeria">Cédula de extrangería</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                            <option value="Tarjeta_identidad">Tarjeta de identidad</option>
+                            <option value="Registro_civil">Registro civil</option>
+                            <option value="Carnet_diplomatico">Carné diplomático</option>
+                            <option value="Perm_especial_permanencia">Permiso especial de permanencia</option>
+                        </select>
+                    </div> 
+                    <div class="col-md-6 mb-2">
+                        <input type="number" class="form-control bg-light" name="identification" placeholder="Número de identificación"
+                            value="{{identification}}">
+                    </div>     
+                    <div class="col-md-4 mb-0">
+                        <input type="text" class="form-control bg-light" name="name" placeholder="Nombres"
+                            >
+                    </div>
+                    <div class="col-md-4 mb-0">
+                        <input type="text" class="form-control bg-light" name="lastname" placeholder="Primer apellido"
+                            >
+                    </div>
+                    <div class="col-md-4 mb-0">
+                        <input type="text" class="form-control bg-light" name="sec_lastname"
+                            placeholder="Segundo apellido">
+                    </div>                                       
+                </div>     
+
+                <h6 class="font-weight-bold mt-0 mb-1">Información general</h6>                              
+                <div class="form-group row"> 
+                    <div class="col-md-4 mb-0">
+                        <label for="f_nac" class="mb-0">Fecha de nacimiento:</label>
+                        <input type="date" class="form-control bg-light mt-0" id="f_nac" name="date_of_bird" placeholder="Fecha de nacimiento"
+                            value="{{date_of_bird}}">
+                    </div>
+                    <div class="col-md-4 mb-2">  
+                        <label for="genero" class="mb-0">Género:</label>                      
+                        <select class="custom-select mr-sm-2" id="gender" name="gender">            
+                            <option value="Masculino">Masculino</option> 
+                            <option value="Femenino">Femenino</option>  
+                            <option value="Otro">Otro</option>                         
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-0">
+                        <label for="numero" class="mb-0">Teléfono móvil:</label> 
+                        <input type="number" class="form-control bg-light" name="mobile_phone"
+                            placeholder="Número móvil" value="{{mobile_phone}}">
+                    </div> 
+                </div>
+
+                <h6 class="font-weight-bold mt-0 mb-1">Información de sesión</h6>                              
+                <div class="form-group row d-flex justify-content-center">                    
+                    <div class="col-md-6 mb-2">                        
+                        <label for="role" class="mb-0">Rol:</label>
+                        <select class="custom-select mr-sm-2" id="role" name="role">                            
+                            <option selected>Elija un tipo de usuario</option>
+                            <option value="Admin">Administrador de la plataforma</option>
+                            <option value="Empleado">Empleado</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <label for="correo" class="mb-0">Correo:</label>
+                        <input type="email" class="form-control bg-light" name="email" placeholder="Email"
+                            value="{{email}}">
+                    </div>
+                    <div class="col-md-6 mb-0">
+                        <input type="password" class="form-control bg-light" name="password" placeholder="Contraseña">
+                    </div>
+                    <div class="col-md-6 mb-0">
+                        <input type="password" class="form-control bg-light" name="confirm_password" placeholder="Confirmar contraseña">           
+                    </div>                   
+                </div>
+
+                <h6 class="font-weight-bold mt-0 mb-1">Datos de empresa</h6>                              
+                <div class="form-group row"> 
+                    <div class="col-md-6 mb-2"> 
+                        <label for="company_name" class="mb-0">Nombre entidad</label>
+                        <input type="text" readonly=»readonly» class="form-control bg-light mt-0" id="company_name" name="company_name" placeholder="Nombre entidad"
+                                  value="LCA SYS">
+                    </div>
+                    <div class="col-md-6 mb-2"> 
+                        <label for="nit" class="mb-0">NIT</label>
+                        <input type="text" readonly=»readonly» class="form-control bg-light mt-0" id="nit" name="nit" placeholder="Nit Entidad"
+                                  value="83234971">
+                    </div> 
+                    <div class="col-md-6 mb-2"> 
+                        <label for="company_city" class="mb-0">Ciudad</label>
+                        <input type="text" readonly=»readonly» class="form-control bg-light mt-0" id="company_city" name="company_city" placeholder="ciudad entidad"
+                                  value="Neiva">
+                    </div>
+                    <div class="col-md-6 mb-2"> 
+                        <label for="company_department" class="mb-0">Departamento</label>
+                        <input type="text" readonly=»readonly» class="form-control bg-light mt-0" id="company_department" name="company_department" placeholder="departamento Entidad"
+                                  value="Huila">
+                    </div> 
+                </div>
+                <div class="d-none">
+                    <select name="company_address" class="hidden" aria-hidden="true">
+                        <option value="Calle 51 #24-14 Los Cipreses"></option>
+                    </select>
+                    <select name="company_phone" class="hidden" aria-hidden="true">
+                        <option value="3115319492"></option>
+                    </select>
+                    <select name="legal_name" class="hidden" aria-hidden="true">
+                        <option value="Leando Enrique"></option>
+                    </select>
+                    <select name="legal_lastname" class="hidden" aria-hidden="true">
+                        <option value="Cuellar"></option>
+                    </select>
+                    <select name="legal_sec_lastname" class="hidden" aria-hidden="true">
+                        <option value="Artunduaga"></option>
+                    </select>
+                    <select name="legal_type_identification" class="hidden" aria-hidden="true">
+                        <option value="Cédula"></option>
+                    </select>
+                    <select name="legal_number_identification" class="hidden" aria-hidden="true">
+                        <option value="83234971"></option>
+                    </select>
+                    <select name="legal_mobile_number" class="hidden" aria-hidden="true">
+                        <option value="3115319492"></option>
+                    </select>
+                </div>
+                <hr>
+
+                <div class="col-md-4 mx-auto">                  
+                    <button class="btn btn-primary btn-block">Registrar</button>
+                </div>        
+            </form>            
+        </div>
+    </div>    
+</div>
+{{/if}}

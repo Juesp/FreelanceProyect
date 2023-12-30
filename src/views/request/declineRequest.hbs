@@ -1,0 +1,113 @@
+{{#if Admin}}
+<div class="col-md-10 mx-auto mt-0">
+<div> 
+  <hr>
+  <h2> <p class="font-italic inline">Mantenimientos rechazados</p></h2>  
+  <hr>
+</div>
+  {{#if pList}}
+    <table class="table table-light table-bordered table-hover overflow-y: hidden" id="miTabla">
+      <thead class="table-secondary">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Entidad</th>
+          <th scope="col">Fecha de solicitud</th>
+          <th scope="col">Fecha de mantenimiento</th>
+          <th scope="col">Hora de mantenimiento</th>
+          <th scope="col">Descripción</th>
+        </tr>
+      </thead>
+      <tbody>   
+        {{#each pList}} 
+          <tr>
+            <td>{{company_request}}</td>
+            <td>{{date_of_request}}</td>
+            <td>{{date_of_maintenance}}</td>
+            <td>{{hour_of_maintenance}}</td>
+            <td>{{description}}</td>
+          </tr>
+        {{/each}}     
+      </tbody>
+    </table>
+    <script>
+        // JavaScript para asignar índices a las filas de la tabla
+        document.addEventListener('DOMContentLoaded', function() {
+            var tabla = document.getElementById('miTabla');
+            var filas = tabla.getElementsByTagName('tr');
+
+            for (var i = 1; i < filas.length; i++) {
+                var celdaIndice = document.createElement('td');
+                celdaIndice.textContent = i;
+                celdaIndice.style.fontWeight = 'bold'; 
+                filas[i].insertBefore(celdaIndice, filas[i].firstChild);
+            }
+        });
+
+    </script>
+  {{else}}
+    <br>
+    <br>
+    <br>
+    <div>
+      <h4>No se encontraron mantenimientos rechazados.</h4>
+    </div>
+  {{/if}}
+</div>
+{{/if}}
+
+{{#if Cliente}}
+<div class="col-md-10 mx-auto mt-0">
+<div> 
+  <hr>
+  <h2> <p class="font-italic inline">Mantenimientos rechazados</p></h2>  
+  <hr>
+</div>
+  {{#if pList}}
+    <table class="table table-light table-bordered table-hover overflow-y: hidden" id="miTabla">
+      <thead class="table-secondary">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Entidad</th>
+          <th scope="col">Fecha de solicitud</th>
+          <th scope="col">Fecha de mantenimiento</th>
+          <th scope="col">Hora de mantenimiento</th>
+          <th scope="col">Descripción</th>
+        </tr>
+      </thead>
+      <tbody>   
+        {{#each pList}} 
+          <tr>
+            <td>{{company_request}}</td>
+            <td>{{date_of_request}}</td>
+            <td>{{date_of_maintenance}}</td>
+            <td>{{hour_of_maintenance}}</td>
+            <td>{{description}}</td>
+          </tr>
+        {{/each}}     
+      </tbody>
+    </table>
+    <script>
+        // JavaScript para asignar índices a las filas de la tabla
+        document.addEventListener('DOMContentLoaded', function() {
+            var tabla = document.getElementById('miTabla');
+            var filas = tabla.getElementsByTagName('tr');
+
+            for (var i = 1; i < filas.length; i++) {
+                var celdaIndice = document.createElement('td');
+                celdaIndice.textContent = i;
+                celdaIndice.style.fontWeight = 'bold'; 
+                filas[i].insertBefore(celdaIndice, filas[i].firstChild);
+            }
+        });
+
+    </script>
+  {{else}}
+    <br>
+    <br>
+    <br>
+    <div>
+      <h4>No se encontraron mantenimientos rechazados.</h4>
+    </div>
+  {{/if}}
+</div>
+{{/if}}

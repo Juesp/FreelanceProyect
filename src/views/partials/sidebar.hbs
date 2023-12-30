@@ -1,0 +1,186 @@
+<!-- Sidebar  -->
+
+{{#if Admin}}
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <a href="/users/signInForm">
+            <h1 class="font-weight-bold titleSidebar">LCA</h1>
+        </a>
+
+        <!-- <h3 class="mb-0 mt-1 text-center font-italic font-weight-bold">
+            <a href="/users/signInForm">PAV</a>
+        </h3>
+        <h5 class="mt-0 mb-0 text-center">Sistema de Información</h5> -->
+
+    </div>
+
+    <ul class="list-unstyled components mt-0">
+        <li class="active mt-0">
+            <a href="/users/signInForm">Inicio</a>
+        </li>
+
+        <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Usuarios</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="/users/createUserForm">Agregar usuario</a>
+                </li>
+                <li>
+                    <a href="/users/createCompanyForm">Agregar Empresa</a>
+                </li>
+                <li>
+                    <a href="/users/seeAllUsers">Lista de Usuarios</a>
+                </li>
+                <li>
+                    <a href="/users/seeAllCustomers">Lista de Empresas</a>
+                </li>
+                <li>
+                    <a href="/users/findUserByIdentification">Búsqueda de usuario por cédula</a>
+                </li>
+            </ul>
+        </li>
+        
+        <li>
+            <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Mantenimientos</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu1">
+                <li>
+                    <a href="/request/finishedRequest">Historial</a>
+                </li>
+                <li>
+                    <a href="/request/seeAllCreateRequest">Por Asignar</a>
+                </li>
+                <li>
+                    <a href="/request/pendingRequest">Pendientes</a>
+                </li>
+                <li>
+                    <a href="/request/declineRequest">Rechazados</a>
+                </li>
+            </ul>
+        </li>
+        
+        <li>
+            <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Mi perfil</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu4">
+                <li>
+                    <a href="/users/myProfile">Mi perfil</a>
+                </li>
+                <li>
+                    <a href="/users/changePasswd">Cambiar mi contraseña</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- <li>
+            <a href="#">Contact</a>
+        </li>  -->
+    </ul>
+
+</nav>
+{{/if}}
+
+{{#if Empleado}}
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <a href="/users/signInForm">
+            <h1 class="font-weight-bold titleSidebar">LCA</h1>
+        </a>
+
+        <!-- <h3 class="mb-0 mt-1 text-center font-italic font-weight-bold">
+            <a href="/users/signInForm">PAV</a>
+        </h3>
+        <h5 class="mt-0 mb-0 text-center">Sistema de Información</h5> -->
+
+    </div>
+
+    <ul class="list-unstyled components mt-0">
+        <li class="active mt-0">
+            <a href="/users/signInForm">Inicio</a>
+        </li>
+
+        
+        <li>
+            <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Mantenimientos</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu1">                
+                <li>
+                    <a href="/request/pendingRequest">Asignados</a>
+                </li>
+                <li>
+                    <a href="/request/finishedRequest">Historial</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="statics">
+            <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Mi perfil</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu4">
+                <li>
+                    <a href="/users/myProfile">Mi perfil</a>
+                </li>
+                <li>
+                    <a href="/users/changePasswd">Cambiar mi contraseña</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- <li>
+            <a href="#">Contact</a>
+        </li>  -->
+    </ul>
+
+
+</nav>
+{{/if}}
+
+{{#if Cliente}}
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <a href="/users/signInForm">
+            <h1 class="font-weight-bold titleSidebar">LCA</h1>
+        </a>
+
+    </div>
+
+    <ul class="list-unstyled components mt-0">
+        <li class="active mt-0">
+            <a href="/users/signInForm">Inicio</a>
+        </li>
+
+        <li>
+            <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Mantenimientos</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu1">
+                <li>
+                    <a href="/request/createRequestForm">Agendar</a>
+                </li>
+                <li>
+                    <a href="/request/pendingRequest">Pendientes</a>
+                </li>
+                <li>
+                    <a href="/request/declineRequest">Rechazados</a>
+                </li>
+                <li>
+                    <a href="/request/finishedRequest">Historial</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Mi perfil</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu4">
+                <li>
+                    <a href="/users/myProfile">Mi perfil</a>
+                </li>
+                <li>
+                    <a href="/users/changePasswd">Cambiar mi contraseña</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- <li>
+            <a href="#">Contact</a>
+        </li>  -->
+    </ul>
+
+    <br>
+
+</nav>
+{{/if}}

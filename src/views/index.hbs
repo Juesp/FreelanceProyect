@@ -1,0 +1,33 @@
+<div class="login-container">
+    <div class="logo-container">
+        <img src="/img/LCA__PngLogo.png" alt="Logo" style="max-width: 95%;" class="imgLogIn">
+    </div>
+    <div class="login-form-container">
+        <h1 class="text-white font-weight-bold title-form">Iniciar Sesión</h2>
+        <h5 class="text-white subtitle-form">Sistema de Agendamiento e Historial</h2>
+        <div class="divider"></div>
+        <div class="login-form">
+            <form action="/users/signIn" class="justify-content-center" method="POST">
+                <div class="mb-3">
+                    <label for="inputEmail" class="text-white form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control startedForm" name="email" id="inputEmail" placeholder="Ingrese su correo electrónico">
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword" class="text-white form-label">Contraseña</label>
+                    <input type="password" class="form-control startedForm" name="password" id="inputPassword" placeholder="Ingrese su contraseña">
+                </div>
+                <div class="form-group">
+                  <div class="forgot-pass">
+                    <a href="/users/forgotPasswdForm"> ¿Olvidaste tu contraseña? </a>
+                  </div>
+                </div>
+                <div class="col-md-13 mx-auto">
+                  <button class="btn btn-block">
+                    Entrar
+                  </button>
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>

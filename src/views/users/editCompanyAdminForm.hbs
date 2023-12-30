@@ -1,0 +1,99 @@
+{{#if Admin}}
+    <div class="col-md-8 mx-auto mt-3">
+        <div class="card ">
+            <div class="card-header text-center">            
+                <h1 class="h4 text-white font-weight-bold">Edición de Empresa</h1>
+            </div>
+            <div class="card-body">  
+
+                <form action="/users/editCompanyAdmin/{{user1.id}}?_method=PUT" class= "justify-content-center" method="POST">             
+                    <input type="hidden" name="_method" value="PUT">  
+                    
+                    <h6 class="font-weight-bold mt-0 mb-1">Datos Empresa</h6>                              
+                    <div class="form-group row d-flex justify-content-center"> 
+                        <div class="col-md-6 mb-2"> 
+                            <label for="nombre" class="mb-0">Nombre:</label>                      
+                            <input type="text" class="form-control bg-light" name="company_name"
+                                placeholder="Nombre Entidad" value="{{user1.company_name}}">
+                        </div> 
+                        <div class="col-md-6 mb-2">
+                            <label for="nit" class="mb-0">NIT:</label>                      
+                            <input type="number" class="form-control bg-light" name="nit" placeholder="Número de NIT"
+                                value="{{user1.nit}}">
+                        </div>     
+                        <div class="col-md-6 mb-2">
+                            <label for="ciudad" class="mb-0">Ciudad:</label>                      
+                            <input type="text" class="form-control bg-light" name="company_city" placeholder="Ciudad"
+                                value="{{user1.company_city}}">
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label for="Departamento" class="mb-0">Departamento:</label>                      
+                            <input type="text" class="form-control bg-light" name="company_department" placeholder="Departamento"
+                                value="{{user1.company_department}}">
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label for="direccion" class="mb-0">Dirección:</label>                      
+                            <input type="text" class="form-control bg-light" name="company_address"
+                                placeholder="Dirección" value="{{user1.company_address}}">
+                        </div>                                       
+                        <div class="col-md-6 mb-2">
+                            <label for="telefono entidad" class="mb-0">Teléfono Entidad:</label>                      
+                            <input type="number" class="form-control bg-light" name="company_phone"
+                                placeholder="Telefóno" value="{{user1.company_phone}}">
+                        </div>                                       
+                    </div>                                  
+                    <hr>
+
+                    <h6 class="font-weight-bold mt-0 mb-1">Datos representante legal</h6>                              
+                    <div class="form-group row"> 
+                        <div class="col-md-4 mb-0">
+                            <label for="nombre legal" class="mb-0">Nombre:</label>                      
+                            <input type="text" class="form-control bg-light" name="legal_name"
+                                placeholder="Nombre" value="{{user1.legal_name}}">
+                        </div>                                       
+                        <div class="col-md-4 mb-0">
+                            <label for="apellido legal" class="mb-0">Primer Apellido:</label>                      
+                            <input type="text" class="form-control bg-light" name="legal_lastname"
+                                placeholder="Apellido" value="{{user1.legal_lastname}}">
+                        </div> 
+                        <div class="col-md-4 mb-0">
+                            <label for="apellido dos legal" class="mb-0">Segundo Apellido:</label>                      
+                            <input type="text" class="form-control bg-light" name="legal_sec_lastname"
+                                placeholder="Segundo Apellido" value="{{user1.legal_sec_lastname}}">
+                        </div> 
+                        <div class="col-md-4 mb-0">                        
+                            <label for="tip identi" class="mb-0">Tipo de identificación:</label>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="legal_type_identification">
+                                <!-- Circulear externa 024 de 2019 Ministerio de protección social -->                            
+                                <option selected>{{user1.legal_type_identification}}</option>                            
+                                <option value="Cedula">Cédula</option>
+                                <option value="Cedula_extrangeria">Cédula de extrangería</option>
+                                <option value="Pasaporte">Pasaporte</option>
+                                <option value="Tarjeta_identidad">Tarjeta de identidad</option>
+                                <option value="Registro_civil">Registro civil</option>
+                                <option value="Carnet_diplomatico">Carné diplomático</option>
+                                <option value="Perm_especial_permanencia">Permiso especial de permanencia</option>
+                            </select>
+                        </div> 
+                        <div class="col-md-4 mb-0">
+                            <label for="numero legal" class="mb-0">Número de identificación:</label>                      
+                            <input type="number" class="form-control bg-light" name="legal_number_identification"
+                                placeholder="Número de identificación" value="{{user1.legal_number_identification}}">
+                        </div> 
+                        <div class="col-md-4 mb-0"> 
+                            <label for="telefono" class="mb-0">Teléfono móvil:</label>                      
+                            <input type="number" class="form-control bg-light" name="legal_mobile_number"
+                                placeholder="Teléfono móvil" value="{{user1.legal_mobile_number}}">
+                        </div> 
+                    </div>
+                    
+                    <div class="col-md-4 mx-auto">                  
+                        <button class="btn btn-primary btn-block">Guardar</button>
+                    </div>
+                    
+                </form>            
+            </div>
+        </div>    
+    </div>
+<br>
+{{/if}}

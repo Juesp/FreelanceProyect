@@ -1,0 +1,171 @@
+
+{{#if Cliente}}
+<div class="col-md-10 mx-auto mt-0">
+<div> 
+  <hr>
+  <h2> <p class="font-italic inline">Agendar Mantenimiento</p></h2>  
+  <hr>
+  {{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> --}}
+</div>
+    <table class="table table-light table-bordered table-hover overflow-y: hidden">
+      <thead class="table-secondary">
+        <tr>
+          <th scope="col">Empresa</th>
+          <th scope="col">Fecha de solicitud</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Teléfono</th>
+          <th scope="col">Solicitado por</th>
+          <th scope="col">Agendar fecha</th>     
+          
+        </tr>
+      </thead>
+      <input type="hidden" id="fechas" value="{{fechasCorrect}}">
+      <tbody>   
+          <tr>
+            <td>{{company_name}}</td>
+            <td>{{currentDate}}</td>
+            <td>{{company_address}}</td>
+            <td>{{company_city}}</td>
+            <td>{{company_phone}}</td>
+            <td>{{name}} {{lastname}} {{sec_lastname}}</td>
+            <td>
+              {{!-- <button type="button" data-id="{{_id}}"  class="btn btn-success edit"  data-bs-target="#exampleModal">
+              +
+              </button>
+            <!-- Modal -->
+            <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Seleccione la fecha del examen</h5>
+                    <button type="button" class="btn-close fa fa-times fa-lg" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="/exams/obtainDate/{{_id}}" class= "justify-content-center" method="POST">  
+                      
+                      <div class="form-group row d-flex justify-content-center">                           
+                            <div class="col-md-6 mb-0">
+                              <label for="date_of_exam" class="mb-0">Fecha de examen</label>
+                              <input type="date" class="form-control bg-light mt-0" id="date_of_exam" name="date" placeholder="Fecha de Examen"
+                                  value="{{date_of_exam}}">
+                            </div> 
+                            <div class="test-class"><input type="text" name="idExam" id="eidExam" value="">
+                            <input type="text" name="" id="" value="{{sec_lastnameRel}}"></div>
+                      </div>                                  
+                      
+                      <hr>
+                      <div class="col-md-4 mx-auto">                  
+                        <button class="btn btn-primary btn-block">Continuar</button>
+                      </div>
+                    </form>                    
+                  </div>                  
+                </div>
+              </div>
+            </div> --}}
+                <form action="/request/obtainDate/" method="POST">  
+                        <div>
+                            <input type="text" class="form-control bg-light mb-2 fechasok" name="date" placeholder="Fecha de agendamiento"
+                                    value="{{date_of_maintance}}">
+                        </div>
+                        <button class="btn btn-success btn-block btn-sm">Añadir hora</button>
+                </form>
+            </td>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                      <script>
+                          $(document).on('click', '.edit', function(){
+                            var id=$(this).data('id');
+                            console.log(id)
+                            
+                            $('#edit').modal('show');
+                            $('.modal-body #eidExam').val(id);
+                            });
+                            var fecha = new Date();
+                            var anio = fecha.getFullYear();
+                            var dia = fecha.getDate();
+                            var _mes = fecha.getMonth(); //viene con valores de 0 al 11
+                            _mes = _mes + 1; //ahora lo tienes de 1 al 12
+                            if (_mes < 10) //ahora le agregas un 0 para el formato date
+                            {
+                              var mes = "0" + _mes;
+                            } else {
+                              var mes = _mes.toString;
+                            }
+
+                            let fecha_minimo = anio + '-' + mes + '-' + dia; // Nueva variableconsole.log(fecha_minimo)
+                            document.getElementById("date_of_exam").setAttribute('min',fecha_minimo);
+
+
+                      </script>
+                      <script>
+                        
+                        $(document).on('focus', '.fechasok', function () {
+                            $(this).datepicker({
+                                minDate: 0,
+                                dateFormat: 'yy/mm/dd',
+                                inline: true,
+                                numberOfMonths: [1, 2],
+                                dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                                beforeShowDay: setCustomDate
+                            });
+                        });
+                        function setCustomDate(date) {
+                            var clazz = "";
+                            var arr1 = highlightDays(date);
+                            if (arr1[1] != "") clazz = arr1[1];
+
+                            var arr2 = disableAllTheseDays(date);
+                            var arr3 = $.datepicker.noWeekends(date);
+
+                            return [(!arr2[0] || !arr3[0]) ? false : true, clazz];
+                        }
+
+                        var holydays = ['27/06/2022', '10/18/2013', '11/2/2013'];
+                        function highlightDays(date) {
+                            for (var i = 0; i < holydays.length; i++) {
+                                if (new Date(holydays[i]).toString() == date.toString()) {
+                                    return [true, 'highlight'];
+                                }
+                            }
+                            return [true, ''];
+
+                        }
+
+                        let valores = [$("#fechas").val()];
+                                let list = [];
+                                valores.forEach(element => {//Para cada valor del array
+                                    element.split(',').forEach(elm => {//Lo divido en 2 por la coma y para cada uno de los resultados
+                                        list.push((elm));//LO meto en el array fin haciéndole un parse a float para evitar comillas
+                                    });
+                                });
+                                console.log(list)
+                                let result = null;
+                                for (let i = 0; i < list.length; i++) {
+                                  result = list[i].split('');
+                                  for (let j = 0; j < list[i].length; j++) {
+                                    if (result[j] == "/") {
+                                      result[j] = "-"
+                                    }
+                                  }
+                                  list[i] = result.join('').toString();
+                                }
+                                console.log(list);
+
+                          var disabledDays = list;
+
+                          function disableAllTheseDays(date) {
+                              var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
+                              if($.inArray((d-1) + '-' + (m+1) + '-' + y,disabledDays) != -1) return [false];
+                              return [true];
+                          }
+
+                      </script>
+            
+          </tr>
+        
+      </tbody>
+    </table>
+    
+</div>
+{{/if}}
+
