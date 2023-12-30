@@ -1,11 +1,10 @@
-<div class="col-md-8 mx-auto mt-0">
+<div class="col-md-8 mx-auto mt-3">
     <div class="card ">
-        <div class="card-header text-center bg-secondary">            
-            <h1 class="h4 text-white font-weight-bold">Mi perfil</h1>
+        <div class="card-header text-center">            
+            <h1 class="h4 text-white font-weight-bold">Perfil de usuario</h1>
         </div>
-        <div class="card-body">
-
-            <h5 class="font-weight-bold text-center mt-0 mb-1">Información personal</h5>
+        <div class="card-body"> 
+                <h5 class="font-weight-bold text-center mt-0 mb-1">Información personal</h5>
                 <hr class="mt-0 mb-0">                        
                 <div class="form-group row mb-0 mt-0">    
                     <div class="col-md-4">
@@ -52,123 +51,53 @@
                 </div> 
                 <div class="form-group row mb-0">    
                     <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Tipo de sangre:</label>                           
-                    </div>                
-                    <div >                         
-                        <a class="bg-light">{{user.blood_type}}</a>    
-                    </div>                                         
-                </div> 
-                <div class="form-group row mb-0">    
-                    <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Rh:</label>                           
-                    </div>                
-                    <div >                         
-                        <a class="bg-light">{{user.rh}}</a>    
-                    </div>                                         
-                </div> 
-                <div class="form-group row mb-0">    
-                    <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Estado civil:</label>                           
-                    </div>                
-                    <div >                         
-                        <a class="bg-light">{{user.marital_status}}</a>    
-                    </div>                                         
-                </div> 
-                <div class="form-group row mb-0">    
-                    <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">EPS:</label>                           
-                    </div>                
-                    <div >                         
-                        <a class="bg-light">{{user.EPS}}</a>    
-                    </div>                                         
-                </div> 
-
-                <h5 class="font-weight-bold text-center mt-0 mb-1">Datos de localización</h5>
-                <hr class="mt-0 mb-0">
-                <div class="form-group row mb-0">    
-                    <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Teléfono de la casa:</label>                           
-                    </div>                
-                    <div >                         
-                        <a class="bg-light">{{user.home_phone}}</a>    
-                    </div>                                         
-                </div> 
-                <div class="form-group row mb-0">    
-                    <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Teléfono móvil:</label>                           
+                        <label class="bg-light font-weight-bold">Número de Teléfono:</label>                           
                     </div>                
                     <div >                         
                         <a class="bg-light">{{user.mobile_phone}}</a>    
                     </div>                                         
-                </div>
-                <div class="form-group row mb-0">    
-                    <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Teléfono del trabajo:</label>                           
-                    </div>                
-                    <div >                         
-                        <a class="bg-light">{{user.work_phone}}</a>    
-                    </div>                                         
                 </div> 
                 <div class="form-group row mb-0">    
                     <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Dirección:</label>                           
-                    </div>                
-                    <div >                         
-                        <a class="bg-light">{{user.address}}</a>    
-                    </div>                                         
-                </div> 
-                <div class="form-group row mb-0">    
-                    <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Ciudad:</label>                           
-                    </div>                
-                    <div >                         
-                        <a class="bg-light">{{user.city}}</a>    
-                    </div>                                         
-                </div> 
-                <div class="form-group row mb-0">    
-                    <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Departamento:</label>                           
-                    </div>                
-                    <div >                         
-                        <a class="bg-light">{{user.department}}</a>    
-                    </div>                                         
-                </div>  
-
-                <h5 class="font-weight-bold text-center mt-0 mb-1">Información de sesión</h5>
-                <hr class="mt-0 mb-0">
-                <div class="form-group row mb-0">    
-                    <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Correo electrónico:</label>                           
-                    </div>                
-                    <div >                         
-                        <a class="bg-light">{{user.email}}</a>    
-                    </div>                                         
-                </div> 
-                <div class="form-group row mb-0">    
-                    <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Tipo de usuario:</label>                           
+                        <label class="bg-light font-weight-bold">Rol:</label>                           
                     </div>                
                     <div >                         
                         <a class="bg-light">{{user.role}}</a>    
                     </div>                                         
                 </div> 
-                
-                <h5 class="font-weight-bold text-center mt-0 mb-1">Información de contacto</h5>
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Email:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user.email}}</a>    
+                    </div>                                         
+                </div> 
+
+                <h5 class="font-weight-bold text-center mt-0 mb-1">Datos de Empresa</h5>
                 <hr class="mt-0 mb-0">
                 <div class="form-group row mb-0">    
                     <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Nombres y apellidos del contacto:</label>                           
+                        <label class="bg-light font-weight-bold">Nombre de Empresa:</label>                           
                     </div>                
                     <div >                         
-                        <a class="bg-light">{{user.contact_name}} {{user.contact_lastname}} {{user.contact_sec_lastname}}</a>    
+                        <a class="bg-light">{{user.company_name}}</a>    
                     </div>                                         
-                </div>                
+                </div> 
                 <div class="form-group row mb-0">    
                     <div class="col-md-4">
-                        <label class="bg-light font-weight-bold">Relación o parentesco:</label>                           
+                        <label class="bg-light font-weight-bold">NIT:</label>                           
                     </div>                
                     <div >                         
-                        <a class="bg-light">{{user.contact_relationship}}</a>    
+                        <a class="bg-light">{{user.nit}}</a>    
+                    </div>                                         
+                </div>
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Dirección:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user.company_address}}</a>    
                     </div>                                         
                 </div> 
                 <div class="form-group row mb-0">    
@@ -176,18 +105,32 @@
                         <label class="bg-light font-weight-bold">Teléfono:</label>                           
                     </div>                
                     <div >                         
-                        <a class="bg-light">{{user.contact_phone}}</a>    
+                        <a class="bg-light">{{user.company_phone}}</a>    
                     </div>                                         
-                </div>                  
-
+                </div> 
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Ciudad:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user.company_city}}</a>    
+                    </div>                                         
+                </div> 
+                <div class="form-group row mb-0">    
+                    <div class="col-md-4">
+                        <label class="bg-light font-weight-bold">Departamento:</label>                           
+                    </div>                
+                    <div >                         
+                        <a class="bg-light">{{user.company_department}}</a>    
+                    </div>                                         
+                </div>  
 
                 <div class="col-md-4 mx-auto">                  
                     <a href="/users/started "><button class="btn btn-primary btn-block">Aceptar</button></a>
                 </div>
-                
-                     
         </div>
     </div>    
 </div>
-
 <br>
+
+

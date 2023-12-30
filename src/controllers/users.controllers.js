@@ -117,8 +117,8 @@ usersCtrl.createUser = async (req, res)=>{
     }
     
     if (errors.length > 0) {
-        res.render('users/createUserForm', { errors, identification_type, identification, name, lastname, sec_lastname,
-            date_of_bird, gender, mobile_phone, role, email, Admin });
+        res.render('users/createUserForm', { errors, Admin, identification_type, identification, name, lastname, sec_lastname,
+            date_of_bird, gender, mobile_phone, role, email });
     }else {
         const data = { identification_type, identification, name, lastname, sec_lastname,
             date_of_bird, gender, mobile_phone, role, email, password,
@@ -528,16 +528,13 @@ usersCtrl.myProfile = (req, res)=>{
     if(req.user.role == 'Admin'){
         const Admin = true;
         res.render('users/myProfile', {Admin, user, name, lastname, sec_lastname, rol});
-    }else if (req.user.role == 'Medico'){
-        const Medico = true;
-        res.render('users/myProfile', {Medico, user, name, lastname, sec_lastname, rol});
+    }else if (req.user.role == 'Cliente'){
+        const Cliente = true;
+        res.render('users/myProfile', {Cliente, user, name, lastname, sec_lastname, rol});
     }else if (req.user.role == 'Empleado'){
         const Empleado = true;
         res.render('users/myProfile', {Empleado, user, name, lastname, sec_lastname, rol});
-    }else if (req.user.role == 'Paciente'){
-        const Paciente = true;
-        res.render('users/myProfile', {Paciente, user, name, lastname, sec_lastname, rol});
-    } 
+    }
     //res.render('users/myProfile')
 }
 
@@ -554,12 +551,9 @@ usersCtrl.changePasswdForm = (req, res)=>{
     } else if(req.user.role == 'Empleado'){
         const Empleado = true
         res.render('users/changePasswd', { user, Empleado,name, lastname, sec_lastname, rol});
-    } else if(req.user.role == 'Medico'){
-        const Medico = true
-        res.render('users/changePasswd', { user, Medico, lastname, sec_lastname, rol});
-    } else if(req.user.role == 'Paciente'){
-        const Paciente = true
-        res.render('users/changePasswd', { user, Paciente, name, lastname, sec_lastname, rol});
+    } else if(req.user.role == 'Cliente'){
+        const Cliente = true
+        res.render('users/changePasswd', { user, Cliente, lastname, sec_lastname, rol});
     }
 
 } 
@@ -587,16 +581,13 @@ usersCtrl.changePasswd = async (req, res)=>{
         if(req.user.role == 'Admin'){
             const Admin = true;
             res.render('users/changePasswd', {errors, Admin, name, lastname, sec_lastname, rol});
-        }else if (req.user.role == 'Medico'){
-            const Medico = true;
-            res.render('users/changePasswd', {errors, Medico, name, lastname, sec_lastname, rol});
+        }else if (req.user.role == 'Cliente'){
+            const Cliente = true;
+            res.render('users/changePasswd', {errors, Cliente, name, lastname, sec_lastname, rol});
         }else if (req.user.role == 'Empleado'){
             const Empleado = true;
             res.render('users/changePasswd', {errors, Empleado, name, lastname, sec_lastname, rol});
-        }else if (req.user.role == 'Paciente'){
-            const Paciente = true;
-            res.render('users/changePasswd', {errors, Paciente, name, lastname, sec_lastname, rol});
-        }               
+        }             
     } else {
         password = await req.user.encryptPassword(new_password);        
         //console.log(password);

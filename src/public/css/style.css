@@ -21,6 +21,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f8f9fa;
+    overflow: hidden;
 }
 
 .login-container {
@@ -187,14 +188,6 @@ a:focus {
 }
 
 
-.container-redes {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #4C6EC0;
-
-}
-
 .net-title {
     padding-left: 12px;
     margin-top: 14px;
@@ -279,6 +272,7 @@ a:focus {
     border-top: none;
     border-radius: 20px;
     border-color: #B8B9BB;
+    margin-bottom: 80px;
 }
 
 .delete-title {
@@ -516,6 +510,10 @@ a.article:hover {
     width: 100%;
     /* margin-bottom: -20px; */
     transition: all 0.3s;
+    overflow-y: auto;
+    height: 100vh;
+    
+
 }
 
 .modal-body {
